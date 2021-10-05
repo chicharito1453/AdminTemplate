@@ -1,0 +1,464 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+/* size Icon FontAwesome */
+table .fas {
+  font-size: 25px;
+  cursor: pointer;
+}
+table .fa {
+  font-size: 25px;
+  cursor: pointer;
+}
+/* Button các form*/
+.btnForm {
+  float: right;
+}
+.btnForm button {
+  width: 80px;
+  margin-left: 10px;
+}
+/* Trang collaborators */
+#ctvForm label {
+  margin-left: 5px;
+}
+#btnImage {
+  width: 150px;
+  margin-top: 10px;
+}
+#image {
+  height: 350px;
+  width: 100%;
+}
+/* Trang categories */
+#formLoai {
+  margin-left: 25%;
+  width: 50%;
+}
+/* Trang distributors */
+#nccForm label {
+  margin-left: 5px;
+}
+#btnLogoNcc {
+  width: 150px;
+  margin-top: 10px;
+}
+#ncclogo {
+  height: 350px;
+  width: 100%;
+}
+/* Trang products */
+#productForm #link1,
+#link2,
+#link3 {
+  display: none;
+}
+#btnLink1,
+#btnLink2,
+#btnLink3 {
+  width: 200px;
+  margin-top: 10px;
+}
+#productForm img {
+  height: 85%;
+}
+#productForm .card {
+  height: 170px;
+  margin-top: 23px;
+  width: 100%;
+}
+.mb-3 > select {
+  width: 60%;
+}
+/* Tiêu đề h1 */
+.hit-the-floor {
+  color: #fff;
+  font-size: 4em;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-family: Helvetica;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hit-the-floor {
+  text-align: center;
+}
+
+/* Phần header */
+header {
+  z-index: 1;
+  position: fixed;
+  background: #22242a;
+  padding-left: 20px;
+  width: calc(100% - 0%);
+  top: 0;
+  height: 65px;
+}
+.left-area h3 {
+  color: #fff;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 900;
+}
+.left-area span {
+  color: #1dc4e7;
+}
+.logout_btn {
+  padding: 5px;
+  background: #19b3d3;
+  text-decoration: none;
+  float: right;
+  margin-top: -30px;
+  margin-right: 40px;
+  border-radius: 2px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  transition: 0.5s;
+}
+.logout_btn:hover {
+  padding: 5px;
+  text-decoration: none;
+  float: right;
+  margin-top: -30px;
+  margin-right: 40px;
+  border-radius: 2px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: #0d9dbb;
+}
+/* Phần sidebar */
+.sidebar {
+  z-index: 1;
+  top: 0;
+  background: #2f323a;
+  margin-top: 65px;
+  padding-top: 30px;
+  position: fixed;
+  left: 0;
+  width: 255px;
+  height: 100vh;
+  transition: 0.5s;
+  transition-property: left;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.profile_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sidebar .profile_info .profile_image {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+.sidebar .profile_info h4 {
+  color: #ccc;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.sidebar a {
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 70px;
+  text-decoration: none;
+  padding-left: 50px;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+.sidebar a:hover {
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 60px;
+  text-decoration: none;
+  padding-right: 15px;
+  box-sizing: border-box;
+  background: #19b3d3;
+}
+.sidebar i {
+  padding-right: 10px;
+}
+label #sidebar_btn {
+  z-index: 1;
+  color: #fff;
+  position: fixed;
+  cursor: pointer;
+  left: 300px;
+  font-size: 20px;
+  margin: 5px 0;
+  transition: 0.5s;
+  transition-property: color;
+}
+label #sidebar_btn:hover {
+  color: #19b3d3;
+}
+#check:checked ~ .sidebar {
+  left: -185px;
+}
+#check:checked ~ .sidebar a span {
+  display: none;
+}
+#check:checked ~ .sidebar a {
+  font-size: 20px;
+  margin-left: 150px;
+  width: 100%;
+}
+/* Phần nội dung chính */
+.content {
+  width: calc(100% - 250px);
+  margin-top: 60px;
+  padding: 20px;
+  margin-left: 250px;
+  padding-top: 65px;
+  background: url(img/background3.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: 0.5s;
+}
+#check:checked ~ .content {
+  width: calc(100% - 60px);
+  margin-left: 60px;
+}
+#check:checked ~ .sidebar .profile_info {
+  display: none;
+}
+#check {
+  display: none;
+}
+.mobile_nav {
+  display: none;
+}
+/* Responsive css */
+@media screen and (max-width: 780px) {
+  /* Phần header */
+  .left-area h3 {
+    color: #fff;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 550;
+  }
+  .logout_btn {
+    padding: 5px;
+    background: #19b3d3;
+    text-decoration: none;
+    float: right;
+    margin-top: -30px;
+    margin-right: 40px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    transition: 0.5s;
+  }
+  .logout_btn:hover {
+    padding: 5px;
+    text-decoration: none;
+    float: right;
+    margin-top: -30px;
+    margin-right: 40px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    background: #0d9dbb;
+  }
+  /* Phần sidebar */
+  .sidebar {
+    display: none;
+  }
+  #sidebar_btn {
+    display: none;
+  }
+  /* Phần nội dung chính */
+  .content {
+    margin-left: 0;
+    margin-top: 0;
+    width: calc(100% + 0px);
+    height: 100vh;
+    padding: 10px 20px;
+    transition: 0s;
+  }
+  #check:checked ~ .content {
+    width: calc(100% + 0px);
+    margin-left: 0;
+  }
+  /* Phần sidebar responsive thành nav*/
+  .mobile_nav {
+    display: block;
+    width: calc(100% + 0px);
+  }
+  .nav_bar {
+    background: #222;
+    width: calc(100% - 0px);
+    margin-top: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  .nav_bar .mobile_profile_image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  .nav_bar .nav_btn {
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.5s;
+    transition-property: color;
+  }
+  .nav_bar .nav_btn:hover {
+    color: #19b3d3;
+  }
+  .mobile_nav_items {
+    background: #2f323a;
+    display: none;
+  }
+  .mobile_nav_items a {
+    color: #fff;
+    display: block;
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 60px;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: 0.5s;
+  }
+  .mobile_nav_items a:hover {
+    color: #fff;
+    display: block;
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 60px;
+    text-decoration: none;
+    box-sizing: border-box;
+    background: #19b3d3;
+  }
+  .mobile_nav_items i {
+    padding-right: 10px;
+  }
+  .active {
+    display: block;
+  }
+  /* Phần tiêu đề h1 */
+  .hit-the-floor {
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Helvetica;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+      0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+      0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+      0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+      0 20px 20px rgba(0, 0, 0, 0.15);
+  }
+  /* Button các form*/
+  .btnForm {
+    float: right;
+  }
+  .btnForm button {
+    width: 50px;
+    font-size: 13px;
+    margin-left: 2px;
+  }
+  /* Trang collaborators */
+  #ctvForm label {
+    margin-left: 2px;
+  }
+  #btnImage {
+    width: 130px;
+    margin-top: 5px;
+  }
+  /* Trang categories */
+  #formLoai {
+    margin-left: 25%;
+    margin-top: 15px;
+    width: 50%;
+  }
+  /* Trang distributors */
+  #nccForm label {
+    margin-left: 2px;
+  }
+  #btnLogoNcc {
+    width: 130px;
+    margin-top: 5px;
+  }
+  /* Trang distributors */
+  #btnLink1,
+  #btnLink2,
+  #btnLink3 {
+    width: 130px;
+    margin-top: 5px;
+  }
+}
+@media screen and (max-width: 300px) {
+  /* Phần header */
+  .left-area h3 {
+    color: #fff;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 350;
+  }
+  .logout_btn {
+    padding: 1px;
+    background: #19b3d3;
+    text-decoration: none;
+    float: right;
+    margin-top: -30px;
+    margin-right: 40px;
+    border-radius: 2px;
+    font-size: 9px;
+    font-weight: 150;
+    color: #fff;
+    transition: 0.5s;
+  }
+  .logout_btn:hover {
+    padding: 5px;
+    text-decoration: none;
+    float: right;
+    margin-top: -30px;
+    margin-right: 40px;
+    border-radius: 2px;
+    font-size: 9px;
+    font-weight: 150;
+    color: #fff;
+    background: #0d9dbb;
+  }
+  /* button chọn image Trang categories */
+  #btnImage {
+    width: 60px;
+    margin-top: 1px;
+    font-size: 5px;
+  }
+  /* button chọn image Trang distributors */
+  #btnLogoNcc {
+    width: 60px;
+    margin-top: 1px;
+    font-size: 5px;
+  }
+  /* Trang distributors */
+  #btnLink1,
+  #btnLink2,
+  #btnLink3 {
+    width: 60px;
+    margin-top: 1px;
+    font-size: 5px;
+  }
+}
