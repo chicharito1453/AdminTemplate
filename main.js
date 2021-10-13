@@ -1,75 +1,68 @@
-$(document).ready(function () {
-  setHeight();
-});
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
 
-var browserHeight = $(window).height();
-var contentHeight = $(document).height();
+var browserHeight = window.innerHeight;
+var contentHeight = document.documentElement.scrollHeight;
 
 // Khi thu Sidebar thì set tittle cho thẻ a trong sidebar
-$("#check").change(function () {
-  var check = $(this).prop("checked");
-  $(".sidebar a").each(function () {
-    check ? $(this).prop("title", $(this).text()) : $(this).prop("title", "");
+$('#check').onchange = function(){
+  var check = this.checked;
+  $$(".sidebar a").forEach(element => {
+    element.title = check ? element.text : '';
   });
-});
+}
 
 // Đóng mở nav khi responsive
-$(".nav_btn").click(function (e) {
-  $(".mobile_nav_items").toggleClass("active");
-});
+$(".nav_btn").onclick = function(e){
+  $(".mobile_nav_items").classList.toggle('active');
+}
 
 // Nút chọn file trang collaborators
-$("#btnImage").click(function () {
-  $("#inpFile").click();
-});
+if($('#btnImage')){
+  $('#btnImage').onclick = function(){
+    $("#inpFileCTV").click();
+  }
+}
+
 
 // Nút chọn file trang distributors
-$("#btnLogoNcc").click(function () {
-  $("#inpFile").click();
-});
+if($("#btnLogoNcc")){
+  $("#btnLogoNcc").onclick = function(){
+    $("#inpFileNCC").click();
+  }
+}
 
 // 3 Nút chọn file trang products
-$("#btnLink1").click(function () {
-  $("#link1").click();
-});
-$("#btnLink2").click(function () {
-  $("#link2").click();
-});
-$("#btnLink3").click(function () {
-  $("#link3").click();
-});
+if($("#btnLink1")){
+  $("#btnLink1").onclick = function(){
+    $("#link1").click();
+  }
+}
+if($("#btnLink2")){
+  $("#btnLink2").onclick = function(){
+    $("#link2").click();
+  }
+}
+if($("#btnLink3")){
+  $("#btnLink3").onclick = function(){
+    $("#link3").click();
+  }
+}
 
 // Thiết lập chiều cao cho content
 function setHeight() {
-  contentHeight > browserHeight
-    ? $(".content").height(contentHeight)
-    : $(".content").height(browserHeight);
+  $(".content").style.height = 
+  contentHeight > browserHeight 
+  ? contentHeight +'px'
+  : browserHeight +'px';
 }
 
 // Thiết lập chiều cao cho content khi resize
-$(window).resize(function () {
-  $(window).height() < browserHeight
-    ? $(".content").height($(document).height())
-    : $(".content").height(contentHeight);
-  console.log($(window).height());
-});
-
-function tracuu(thaotac, mode) {
-  frmData.thaotac.value = thaotac;
-  mode == 99 ? getCty9Excel(frmData) : getCty9Report(frmData);
+window.resize = function(){
+  $(".content").style.height = 
+  window.innerHeight < browserHeight 
+  ? document.documentElement.scrollHeight + 'px'
+  : contentHeight;
 }
 
-function onchange_sel(id) {
-  var urlParams = "msphongban=" + id;
-
-  vms4Ajax.execute({
-    action: frmData.selectbox.value,
-    params: urlParams,
-    dataType: "data",
-    position: "vt_nhanvien",
-    success: function () {
-      chonsen_selectbox();
-    },
-    debug: false,
-  });
-}
+setHeight();
